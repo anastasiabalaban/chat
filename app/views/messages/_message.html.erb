@@ -1,0 +1,21 @@
+<div class='card border-info mb-3'>
+<!-- <div class="card border-#{current_user.id == message.user_id ? 'info' : 'success'} mb-3"> -->
+  <div class='card-body'>
+    <div class='row'>
+      <div class='col-md-2'>
+        <%= image_tag('person-icon.png', class: 'img-fluid') %>
+      </div>
+      <div class='col-md-10'>
+        <div class='row'>
+          <div class='col-md-6'>
+            <strong><%= message.user.name %></strong>:
+          </div>
+          <div class='col-md-6 text-right'>
+            <small>at <%= l message.created_at, format: :short %></small>
+          </div>
+        </div>
+        <%= message.body %>
+      </div>
+    </div>
+  </div>
+</div>

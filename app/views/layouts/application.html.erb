@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Chat</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= action_cable_meta_tag %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <div class='container'>
+      <nav class='navbar navbar-expand-sm bg-light navbar-light'>
+        <ul class='navbar-nav'>
+          <% if signed_in? %>
+            <li class='nav-item nav-link'>Signed in as: <%= current_user.email %></li>
+            <li class='nav-item'><%= link_to 'Sign out', destroy_user_session_path, method: :delete, class: 'nav-link' %></li>
+          <% else %>
+            <li class='nav-item'><%= link_to 'Log in', new_user_session_path, class: 'nav-link' %></li>
+            <li class='nav-item'><%= link_to 'Sign up', new_user_registration_path, class: 'nav-link' %></li>
+          <% end %>
+        </ul>
+      </nav>
+
+      <div id="flash">
+        <% flash.each do |key, value| %>
+          <%= tag.div value, class: 'alert alert-info' %>
+        <% end %>
+      </div>
+
+      <%= yield %>
+    </div>
+  </body>
+</html>

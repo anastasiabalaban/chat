@@ -1,0 +1,12 @@
+<div class='col-md-8 mx-auto'>
+  <h1 class='text-center'>Chat</h1>
+  <div id='messages'>
+    <%= render @messages %>
+  </div>
+
+  <%= form_with url: '#', html: {id: 'new-message'} do |f| %>
+    <%= f.text_area :body, id: 'message-body', autofocus: true, placeholder: 'Write a message', rows: 3, class: 'form-control input-field' %>
+    <br>
+    <%= f.submit 'Send', class: 'btn btn-outline-info' %>
+  <% end %>
+</div>
