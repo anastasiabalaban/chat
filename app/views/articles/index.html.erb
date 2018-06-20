@@ -1,0 +1,17 @@
+<h1 class='text-center'>Articles</h1>
+<%= link_to 'New article', new_article_path, class: 'btn btn-outline-info mb-3' %>
+ 
+<% @articles.each do |article| %>
+  <div class='card mb-3'>
+    <div class='row'>
+    <div class='col-md-3'>
+      <%= image_tag('photo.png', class: 'card-img-top') %>
+    </div>
+    <div class='col-md-9'>
+      <h4 class='card-header text-info'><%= article.title %></h4>
+      <p class='card-body text-truncate'><%= article.text %></p>
+      <%= link_to 'Read more >>', article_path(article), class: 'btn btn-light' %>
+    </div>
+    </div>
+  </div>
+<% end %>

@@ -1,0 +1,20 @@
+<div class='card border-info mb-3'>
+  <div class='card-body'>
+    <div class='row'>
+      <div class='col-md-1'>
+        <%= image_tag('person-icon.png', class: 'img-fluid') %>
+      </div>
+      <div class='col-md-11'>
+        <div class='row'>
+          <div class='col-md-6'>
+            <strong><%= comment.user.name %></strong>:
+          </div>
+          <div class='col-md-6 text-right'>
+            <small>at <%= l comment.created_at, format: :short %></small>
+          </div>
+        </div>
+        <%= comment.body %>
+      </div>
+    </div>
+  </div>
+</div>
