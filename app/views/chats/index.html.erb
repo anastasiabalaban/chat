@@ -5,7 +5,7 @@
   </div>
 
   <%= form_with url: '#', html: {id: 'new-message'} do |f| %>
-    <%= f.text_area :body, id: 'message-body', autofocus: true, placeholder: 'Write a message', rows: 3, class: 'form-control input-field' %>
+    <%= f.text_area :body, id: 'message-body', autofocus: true, placeholder: 'Write a message', rows: 3, class: 'form-control' %>
     <br>
     <%= f.submit 'Send', class: 'btn btn-outline-info' %>
   <% end %>

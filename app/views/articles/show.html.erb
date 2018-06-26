@@ -1,4 +1,4 @@
-<h3 class='text-center text-info'><%= @article.title %></h3>
+<h3 class='text-center text-info mt-3'><%= @article.title %></h3>
 
 <div class='row'>
   <div class='col-md-8'>
@@ -14,12 +14,11 @@
 
 <h4>Comments:</h4>
 
-<div id='comments'>
+<div id='comments' data-article-id="<=% @article.id %>">
   <%= render @article.comments %>
 </div>
 
 <%= form_with url: '#', html: {id: 'new-comment'} do |f| %>
   <%= f.text_area :body, id: 'comment-body', placeholder: 'Write a comment', rows: 3, class: 'form-control input-field' %>
-  <br>
-  <%= f.submit 'Comment', class: 'btn btn-outline-info' %>
+  <%= f.submit 'Comment', class: 'btn btn-outline-info mt-2' %>
 <% end %>
